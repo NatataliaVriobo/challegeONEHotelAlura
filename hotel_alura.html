@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Example</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Estilos específicos para cada sección */
+        #menu,
+        #reservations {
+            display: none;
+        }
+
+        /* Otros estilos específicos */
+        /* Agrega estilos adicionales según tus necesidades */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotel Example</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#reservations">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bienvenido al Hotel Example</h2>
+        <!-- Contenido de la página de inicio -->
+    </section>
+
+    <section id="menu">
+        <h2>Menú del Restaurante</h2>
+        <!-- Contenido del menú del restaurante -->
+    </section>
+
+    <section id="reservations">
+        <h2>Reservas</h2>
+        <!-- Formulario de reservas -->
+    </section>
+
+    <footer>
+        <p>Derechos de autor © 2023 Hotel Example</p>
+    </footer>
+
+    <script>
+        // Mostrar la sección correspondiente al hacer clic en el enlace del menú
+        document.querySelector('nav').addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                const sectionId = event.target.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach((section) => {
+                    section.style.display = 'none';
+                });
+                document.getElementById(sectionId).style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
